@@ -1,0 +1,14 @@
+@font-face {
+  font-family: 'Font Awesome 6 Free';
+  font-style: normal;
+  font-weight: 900;
+  src: url('solid') format('woff2'),
+       url('solid') format('woff');
+}
+@font-face {
+  font-family: 'Font Awesome 6 Brands';
+  font-style: normal;
+  font-weight: 400;
+  src: url('brands') format('woff2'),
+       url('brands') format('woff');
+}

@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sameer Mir - AI Software Developer</title>
+    <!-- Tailwind CSS (built locally) -->
+    <link rel="stylesheet" href="dist/output.css">
+    <!-- Local Font Awesome CSS -->
+    <link rel="stylesheet" href="fonts/fontawesome/all.min.css">
+<link rel="stylesheet" href="fonts/fontawesome/fontawesome.css">
+    <!-- AOS Animation CSS (still from CDN, optional to self-host) -->
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+<style>
+        section h2.section-title {
+            margin-bottom: 2.5rem;
+        }
+        section h3 {
+            margin-bottom: 1rem;
+        }
+    /* Nav icon background effect */
+    .nav-anim {
+        position: relative;
+        display: inline-block;
+        overflow: visible;
+    }
+    .nav-anim .nav-icon-bg {
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+.nav-svg-icon {
+width: 1.5em;
+height: 1.5em;
+fill: currentColor;
+opacity: 0.4;
+transition: opacity 0.3s, transform 0.3s;
+}
+
+.nav-anim:hover .nav-svg-icon {
+opacity: 1;
+transform: scale(1.2);
+
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%) scale(0.7);
+        opacity: 0;
+        font-size: 2.7em;
+        z-index: 0;
+        pointer-events: none;
+        transition: transform 0.3s cubic-bezier(.4,0,.2,1), opacity 0.3s;
+        color: #0ea5e9;
+    }
+    .nav-anim:hover .nav-icon-bg {
+        opacity: 0.15;
+        transform: translate(-50%, -50%) scale(1.3) rotate(-8deg);
+    }
+    .nav-anim .nav-link-text {
+        position: relative;
+        z-index: 1;
+        transition: color 0.3s, font-size 0.3s cubic-bezier(.4,0,.2,1);
+        font-size: 1rem;
+    }
+    .nav-anim:hover .nav-link-text {
+        color: #0ea5e9; /* sky-500 */
+        font-size: 1.5rem; /* text-2xl (2 levels up) */
+        font-weight: 600;
+    }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-700">
+    <header class="bg-white shadow-md sticky top-0 z-50" data-aos="fade-down" data-aos-duration="1000">
+        <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-sky-600">Sameer Mir</a>
+            <div class="hidden md:flex space-x-1 md:space-x-4">
+    <a href="#about" class="nav-link nav-anim">
+    <span class="nav-icon-bg"><img src="fonts/fontawesome/solid/heart.svg" alt="About Icon" class="nav-svg-icon"/></span>
+    <span class="nav-link-text">About</span>
+    </a>
+    <a href="#skills" class="nav-link nav-anim">
+    <span class="nav-icon-bg"><img src="fonts/fontawesome/solid/gamepad.svg" alt="Skills Icon" class="nav-svg-icon"/></span>
+    <span class="nav-link-text">Skills</span>
+    </a>
+    <a href="#experience" class="nav-link nav-anim">
+    <span class="nav-icon-bg"><img src="fonts/fontawesome/solid/hotel.svg" alt="Experience Icon" class="nav-svg-icon"/></span>
+    <span class="nav-link-text">Experience</span>
+    </a>
+    <a href="#projects" class="nav-link nav-anim">
+    <span class="nav-icon-bg"><img src="fonts/fontawesome/solid/computer.svg" alt="Projects Icon" class="nav-svg-icon"/></span>
+    <span class="nav-link-text">Projects</span>
+    </a>
+    <a href="#education" class="nav-link nav-anim">
+    <span class="nav-icon-bg"><img src="fonts/fontawesome/solid/graduation-cap.svg" alt="Education Icon" class="nav-svg-icon"/></span>
+    <span class="nav-link-text">Education</span>
+    </a>
+    <a href="#contact" class="nav-link nav-anim">
+    <span class="nav-icon-bg"><img src="fonts/fontawesome/solid/address-book.svg" alt="Contact Icon" class="nav-svg-icon"/></span>
+    <span class="nav-link-text">Contact</span>
+    </a>
+</div>
+            <div class="md:hidden"> <button id="mobile-menu-button" class="text-gray-600 hover:text-sky-600 focus:outline-none">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </nav>
+        <div id="mobile-menu" class="md:hidden hidden bg-white shadow-lg">
+            <a href="#about" class="block nav-link text-center py-2 hover:bg-gray-100">About</a>
+            <a href="#skills" class="block nav-link text-center py-2 hover:bg-gray-100">Skills</a>
+            <a href="#experience" class="block nav-link text-center py-2 hover:bg-gray-100">Experience</a>
+            <a href="#projects" class="block nav-link text-center py-2 hover:bg-gray-100">Projects</a>
+            <a href="#education" class="block nav-link text-center py-2 hover:bg-gray-100">Education</a>
+            <a href="#contact" class="block nav-link text-center py-2 hover:bg-gray-100">Contact</a>
+        </div>
+    </header>
+    <section id="hero" class="bg-gradient-to-r from-sky-500 to-indigo-600 text-white py-20 md:py-32" data-aos="fade-up" data-aos-duration="1200">
+        <div class="container mx-auto px-6 text-center">
+            <h1 id="hero-title" class="text-4xl md:text-6xl font-bold mb-4 hero-element">Sameer Mir</h1>
+            <p id="hero-subtitle" class="text-xl md:text-2xl mb-8 hero-element">AI Software Developer | Full-Stack | Cloud Architect</p>
+            <div id="hero-buttons" class="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-4 hero-element">
+                <a href="mailto:mirsameer0304@gmail.com" class="bg-white text-sky-600 hover:bg-gray-100 font-semibold py-3 px-6 rounded-lg shadow-md transition-transform transform hover:scale-105 w-full sm:w-auto">
+                    <i class="fas fa-envelope mr-2"></i> Email Me
+                </a>
+                <a href="#projects" class="bg-transparent border-2 border-white text-white hover:bg-white hover:text-sky-600 font-semibold py-3 px-6 rounded-lg shadow-md transition-transform transform hover:scale-105 w-full sm:w-auto">
+                    <i class="fas fa-briefcase mr-2"></i> View Projects
+                </a>
+            </div>
+        </div>
+    </section>
+    <section id="about" class="py-16 md:py-24 bg-white scroll-animate" data-aos="fade-up" data-aos-duration="1200">
+        <div class="container mx-auto px-6">
+            <h2 class="section-title">About Me</h2>
+            <div class="max-w-3xl mx-auto text-lg text-sky-700 leading-relaxed">
+                <p class="mb-6">
+                    Innovative and results-driven AI Software Developer with expertise in designing and deploying AI-powered solutions,
+                    full-stack applications, and scalable cloud architectures. Adept at leveraging Python, React, Django, Flask,
+                    and FastAPI to develop high-performance applications.
+                </p>
+                <p class="mb-6">
+                    Strong background in machine learning, deep learning, and NLP, integrating LLMs and GenAI APIs to build intelligent systems.
+                    Skilled in database management (PostgreSQL, MongoDB, SQLAlchemy) and cloud computing with AWS, Google Cloud, and Azure.
+                </p>
+                <p class="mb-6">
+                    Proficient in DevOps, CI/CD pipelines, microservices, and containerized deployments to enhance automation and efficiency.
+                    Passionate about driving AI innovation, optimizing system performance, and delivering impactful data-driven insights.
+                </p>
+            </div>
+        </div>
+    </section>
+    <section id="skills" class="py-16 md:py-24 bg-gray-50 scroll-animate" data-aos="fade-up" data-aos-duration="1200">
+        <div class="container mx-auto px-6">
+            <h2 class="section-title">Core Competencies</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="card" data-aos="zoom-in" data-aos-duration="1000">
+                    <h3 class="text-xl font-semibold text-sky-700 mb-3"><i class="fas fa-code mr-2"></i>Programming & Frameworks</h3>
+                    <div class="flex flex-wrap gap-2"> 
+                        <span class="tag">Python</span><span class="tag">C++</span><span class="tag">Java</span><span class="tag">Node.js</span>
+                        <span class="tag">React</span><span class="tag">Django</span><span class="tag">Flask</span><span class="tag">FastAPI</span>
+                    </div>
+                </div>
+                <div class="card" data-aos="zoom-in" data-aos-duration="1000">
+                    <h3 class="text-xl font-semibold text-sky-700 mb-3"><i class="fas fa-brain mr-2"></i>AI & Machine Learning</h3>
+                    <div class="flex flex-wrap gap-2"> 
+                        <span class="tag">LangChain</span><span class="tag">Llamaindex</span><span class="tag">TensorFlow</span><span class="tag">Keras</span>
+                        <span class="tag">Deep Learning</span><span class="tag">NLP</span><span class="tag">GenAI APIs</span><span class="tag">LangGraph</span>
+                        <span class="tag">AgentOps</span>
+                    </div>
+                </div>
+                <div class="card" data-aos="zoom-in" data-aos-duration="1000">
+                    <h3 class="text-xl font-semibold text-sky-700 mb-3"><i class="fas fa-database mr-2"></i>Databases & Big Data</h3>
+                    <div class="flex flex-wrap gap-2"> 
+                        <span class="tag">PostgreSQL</span><span class="tag">MongoDB</span><span class="tag">SQLAlchemy</span><span class="tag">BigQuery</span>
+                        <span class="tag">Supabase</span><span class="tag">Hadoop</span><span class="tag">Kafka</span><span class="tag">Pinecone</span>
+                    </div>
+                </div>
+                <div class="card" data-aos="zoom-in" data-aos-duration="1000">
+                    <h3 class="text-xl font-semibold text-sky-700 mb-3"><i class="fas fa-cloud mr-2"></i>Cloud & DevOps</h3>
+                    <div class="flex flex-wrap gap-2"> 
+                        <span class="tag">AWS (Lambda, S3)</span><span class="tag">Google Cloud</span><span class="tag">Azure</span>
+                        <span class="tag">Docker</span><span class="tag">CI/CD Pipelines</span><span class="tag">Git</span><span class="tag">Microservices</span>
+                    </div>
+                </div>
+                <div class="card" data-aos="zoom-in" data-aos-duration="1000">
+                    <h3 class="text-xl font-semibold text-sky-700 mb-3"><i class="fas fa-tools mr-2"></i>Other Tools & Technologies</h3>
+                    <div class="flex flex-wrap gap-2"> 
+                        <span class="tag">BeautifulSoup</span><span class="tag">Alteryx</span><span class="tag">Tableau</span><span class="tag">Power BI</span>
+                        <span class="tag">ETL Pipelines</span><span class="tag">OpenRouter</span><span class="tag">Streamlit</span><span class="tag">Dialogflow</span>
+                        <span class="tag">JIRA</span><span class="tag">RESTful APIs</span><span class="tag">ORM</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="experience" class="py-16 md:py-24 bg-white scroll-animate" data-aos="fade-up" data-aos-duration="1200">
+        <div class="container mx-auto px-6">
+            <h2 class="section-title">Executive Experiences</h2>
+            <div class="space-y-12">
+                <div class="card" data-aos="fade-right" data-aos-duration="1000">
+                    <h3 class="text-2xl font-semibold text-sky-700 mb-4">AI Software Developer</h3>
+                    <p class="text-lg text-gray-600 mb-2">Aasquare Academy | June 2024 - Present</p>
+                    <ul class="list-disc list-inside space-y-2 text-gray-700">
+                        <li>Designed and implemented an AI-driven event newsletter automation system, developing a Python-based ETL pipeline utilizing BeautifulSoup and LLM API integrations.</li>
+                        <li>Developed and deployed RESTful microservices using FastAPI and SQLAlchemy ORM, leveraging a normalized PostgreSQL database.</li>
+                        <li>Engineered a dynamic content recommendation algorithm for personalized HTML/CSS newsletters via SMTP.</li>
+                        <li>Spearheaded development of an event management system with CI/CD, containerization, asynchronous tasks, and cron-scheduled operations.</li>
+                    </ul>
+                </div>
+                <div class="card" data-aos="fade-left" data-aos-duration="1000">
+                    <h3 class="text-2xl font-semibold text-sky-700 mb-4">Data Analyst Intern</h3>
+                    <p class="text-lg text-gray-600 mb-2">HighRadius Technologies | May 2020 - July 2020</p>
+                    <ul class="list-disc list-inside space-y-2 text-gray-700">
+                        <li>Led data analysis initiatives, designing and deploying complex SQL Server Reporting Services (SSRS) reports.</li>
+                        <li>Managed and optimized SQL jobs, ensuring data accuracy and system integrity.</li>
+                        <li>Utilized AWS and Azure SQL Data Warehouse to streamline data management and analysis.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="projects" class="py-16 md:py-24 bg-gray-50 scroll-animate" data-aos="fade-up" data-aos-duration="1200">
+        <div class="container mx-auto px-6">
+            <h2 class="section-title">Projects & Leadership</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="card" data-aos="zoom-in-up" data-aos-duration="1000">
+                    <h3 class="text-xl font-semibold text-sky-700 mb-4">Learning Management System for Math Education</h3>
+                    <p class="text-sm text-gray-500 mb-3">Jan 2025 - Feb 2025</p>
+                    <ul class="list-disc list-inside space-y-1 text-sm text-gray-700 mb-3">
+                        <li>Led development of an interactive platform for AI-generated math solutions (text/image input).</li>
+                        <li>Integrated OpenAI and Google Generative AI for step-by-step solutions.</li>
+                        <li>Deployed on AWS with automated daily database backups (MySQL).</li>
+                    </ul>
+                    <div class="flex flex-wrap gap-2"> 
+                        <span class="tag">Google Generative AI</span><span class="tag">OpenAI</span><span class="tag">AWS</span><span class="tag">MySQL</span>
+                    </div>
+                </div>
+                <div class="card" data-aos="zoom-in-up" data-aos-duration="1000">
+                    <h3 class="text-xl font-semibold text-sky-700 mb-4">Interactive Data Analysis with Natural Language Queries</h3>
+                    <p class="text-sm text-gray-500 mb-3">Apr 2024 - May 2024</p>
+                    <ul class="list-disc list-inside space-y-1 text-sm text-gray-700 mb-3">
+                        <li>Developed a data analytics tool using Gemini Pro and Langchain for natural language CSV querying.</li>
+                        <li>Designed an intuitive Streamlit UI for complex data operations.</li>
+                        <li>Implemented generative AI embeddings and ChromaDB for enhanced accuracy.</li>
+                    </ul>
+                    <div class="flex flex-wrap gap-2"> 
+                        <span class="tag">Gemini Pro</span><span class="tag">Langchain</span><span class="tag">Streamlit</span><span class="tag">ChromaDB</span>
+                    </div>
+                </div>
+                <div class="card" data-aos="zoom-in-up" data-aos-duration="1000">
+                    <h3 class="text-xl font-semibold text-sky-700 mb-4">Thesis: AI-Driven System Development using Text Prompting</h3>
+                    <p class="text-sm text-gray-500 mb-3">California State University, Northridge | Aug 2023 - May 2024</p>
+                    <ul class="list-disc list-inside space-y-1 text-sm text-gray-700 mb-3">
+                        <li>Designed and implemented five AI applications (Llama Index, LangChain, OpenAI, Mistral AI, Perplexity AI, Gemini).</li>
+                        <li>Developed a custom ChatGPT API integration with moderation.</li>
+                        <li>Conducted comparative analyses of LLM integrations.</li>
+                    </ul>
+                     <div class="flex flex-wrap gap-2"> 
+                        <span class="tag">Llama Index</span><span class="tag">LangChain</span><span class="tag">OpenAI</span><span class="tag">Mistral AI</span><span class="tag">Gemini</span>
+                    </div>
+                </div>
+                <div class="card" data-aos="zoom-in-up" data-aos-duration="1000">
+                    <h3 class="text-xl font-semibold text-sky-700 mb-4">AI Financial Assistant</h3>
+                    <p class="text-sm text-gray-500 mb-3">Aasquare Academy | June 2024 - Dec 2024</p>
+                    <ul class="list-disc list-inside space-y-1 text-sm text-gray-700 mb-3">
+                        <li>Developed an AI financial assistant using NLP and ML for personalized insights.</li>
+                        <li>Integrated real-time financial data APIs.</li>
+                        <li>Built predictive models with TensorFlow (90% accuracy).</li>
+                        <li>Deployed on AWS Lambda with a Dialogflow conversational interface.</li>
+                    </ul>
+                    <div class="flex flex-wrap gap-2"> 
+                        <span class="tag">NLP</span><span class="tag">Machine Learning</span><span class="tag">TensorFlow</span><span class="tag">AWS Lambda</span><span class="tag">Dialogflow</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="education" class="py-16 md:py-24 bg-white scroll-animate" data-aos="fade-up" data-aos-duration="1200">
+        <div class="container mx-auto px-6">
+            <h2 class="section-title">Educational Background</h2>
+            <div class="max-w-2xl mx-auto card" data-aos="fade-up" data-aos-duration="1000">
+                <h3 class="text-2xl font-semibold text-sky-700 mb-4">Master of Science in Computer Science</h3>
+                <p class="text-lg text-gray-600 mb-2">California State University, Northridge | Los Angeles, CA</p>
+                <p class="text-gray-700 mb-1">GPA: 3.5/4.0 (Completed)</p>
+                <p class="text-gray-700"><span class="font-semibold">Relevant Coursework:</span> Machine Learning, Data Structures & Algorithms, Advanced Networking, Computer System Security, Advanced Software Engineering, Computer System Architecture, Web Engineering, Human-Computer Interaction Management.</p>
+            </div>
+        </div>
+    </section>
+    <section id="contact" class="py-16 md:py-24 bg-gray-800 text-white scroll-animate" data-aos="fade-up" data-aos-duration="1200">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold mb-8">Get In Touch</h2>
+            <p class="text-lg mb-4">I'm currently seeking new opportunities and would love to hear from you.</p>
+            <p class="text-lg mb-8">Feel free to reach out via email or connect with me on LinkedIn.</p>
+            <div class="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-6">
+                <a href="mailto:mirsameer0304@gmail.com" class="bg-sky-500 hover:bg-sky-600 text-white font-semibold py-3 px-8 rounded-lg shadow-md transition-transform transform hover:scale-105 text-lg">
+                    <i class="fas fa-envelope mr-2"></i> mirsameer0304@gmail.com
+                </a>
+                <a href="https://www.linkedin.com/in/sameeruddin-mir/" target="_blank" rel="noopener noreferrer" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-lg shadow-md transition-transform transform hover:scale-105 text-lg">
+                    <i class="fab fa-linkedin mr-2"></i> LinkedIn
+                </a>
+<p class="text-lg">
+                    <i class="fas fa-phone mr-2"></i> (+1) 469-967-9022
+                </p>
+            </div>
+<p class="mt-8 text-gray-400">Willing to relocate.</p>
+        </div>
+    </section>
+    <footer class="bg-gray-900 text-gray-400 py-8 text-center" data-aos="fade-up" data-aos-duration="1000">
+        <div class="container mx-auto px-6">
+            <p>&copy; <span id="currentYear"></span> Sameer Mir. All rights reserved.</p>
+            <p>Designed with <i class="fas fa-heart text-red-500"></i> using Tailwind CSS.</p>
+        </div>
+    </footer>
+    <!-- AOS Animation JS -->
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init({ once: true });
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+        const navLinks = document.querySelectorAll('nav a[href^="#"], #mobile-menu a[href^="#"]');
+        navLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                let targetId = this.getAttribute('href');
+                const mobileMenu = document.getElementById('mobile-menu');
+                if (!mobileMenu.classList.contains('hidden')) {
+                    mobileMenu.classList.add('hidden');
+                }
+                if (targetId === '#') {
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                    return;
+                }
+                let targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    let offset = 70;
+                    let bodyRect = document.body.getBoundingClientRect().top;
+                    let elementRect = targetElement.getBoundingClientRect().top;
+                    let elementPosition = elementRect - bodyRect;
+                    let offsetPosition = elementPosition - offset;
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        const sections = document.querySelectorAll('section[id]');
+        const desktopNavLinks = document.querySelectorAll('nav .hidden a.nav-link'); 
+        const mobileNavLinks = document.querySelectorAll('#mobile-menu a.nav-link');
+        function onScroll() {
+            let scrollY = window.pageYOffset;
+            let currentSection = "";
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 100; 
+                const sectionHeight = section.offsetHeight;
+                if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+                    currentSection = section.getAttribute('id');
+                }
+            });
+            if (scrollY < (sections[0]?.offsetTop || 0) - 100) { 
+            desktopNavLinks.forEach(link => link.classList.remove('active'));
+            mobileNavLinks.forEach(link => link.classList.remove('active'));
+            return; 
+            }
+            desktopNavLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${currentSection}`) {
+                    link.classList.add('active');
+                }
+            });
+            mobileNavLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${currentSection}`) {
+                    link.classList.add('active');
+                }
+            });
+        }
+        window.addEventListener('scroll', onScroll);
+        onScroll();
+        const animatedElements = document.querySelectorAll('.scroll-animate');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('in-view');
+                }
+            });
+        }, { threshold: 0.1 }); 
+        animatedElements.forEach(el => observer.observe(el));
+        document.addEventListener('DOMContentLoaded', () => {
+            const heroTitle = document.getElementById('hero-title');
+            const heroSubtitle = document.getElementById('hero-subtitle');
+            const heroButtons = document.getElementById('hero-buttons');
+            setTimeout(() => heroTitle.classList.add('visible'), 100);
+            setTimeout(() => heroSubtitle.classList.add('visible'), 300);
+            setTimeout(() => heroButtons.classList.add('visible'), 500);
+        });
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
